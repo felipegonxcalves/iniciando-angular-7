@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import employees from '../employees';
 
 @Component({
   selector: 'employee-list',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeListComponent implements OnInit {
 
+  employees = employees;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getSalaryColor(empregado) {
+      return empregado.salary > 2000 ? 'green' : null;
   }
 
 }
